@@ -1,14 +1,18 @@
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import TouchBackend from "react-dnd-touch-backend";
 import mockData from "../../mockData";
 import Card from "../card/Card";
 import { useState } from "react";
 import "./kanban.scss";
+
 const Kanban = () => {
   const [data, setData] = useState(mockData);
+
   const onDragEnd = (result) => {
     if (!result.destination) return;
     const { source, destination } = result;
+
     if (source.droppableId !== destination.droppableId) {
       const sourceColIndex = data.findIndex((e) => e.id === source.droppableId);
       const destinationColIndex = data.findIndex(
@@ -22,11 +26,12 @@ const Kanban = () => {
       destinationTask.splice(destination.index, 0, removed);
       data[sourceColIndex].tasks = sourceTask;
       data[destinationColIndex].tasks = destinationTask;
-      setData(data);
+      setData([...data]);
     }
   };
+
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
+    <DragDropContext backend={TouchBackend} onDragEnd={onDragEnd}>
       <div className="kanban">
         {data.map((section) => (
           <Droppable key={section.id} droppableId={section.id}>
