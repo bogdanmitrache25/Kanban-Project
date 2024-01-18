@@ -1,0 +1,11 @@
+.card {
+  padding: 30px;
+  background-color: #2b1f38;
+  border-radius: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  background-color: #3a2750; /* Color diferente al pasar el ratón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}

@@ -1,0 +1,62 @@
+.kanban {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &_section {
+    width: 100%;
+    max-width: 400px;
+    background-color: burlywood;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    &_title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 10px 0 20px;
+    }
+
+    &_content {
+      & > * ~ * {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.kanbanheader {
+  font-size: 2.5em;
+  text-align: center;
+  color: #ff8c00;
+  margin: 30px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff8c00; /* Cambia al color deseado, aquí se usa un tono naranja */
+  color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-size: 0.9em;
+  border-radius: 8px; /* Añadido border-radius */
+
+  .footer {
+    color: #fff; /* Color del texto del span */
+    text-decoration: none; /* Quitado subrayado */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ffa500;
+    }
+  }
+}
+
+.kanban_section_title {
+  text-align: center;
+}
