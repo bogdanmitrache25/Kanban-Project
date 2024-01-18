@@ -1,8 +1,8 @@
+// App.jsx
 import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import ReactDOM from "react-dom";
+import App from "./App";
 import "./index.css";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div>
